@@ -10,12 +10,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RsvpComponent } from './rsvp/rsvp.component';
 import { ConfirmedComponent } from './confirmed/confirmed.component';
+import { HomeComponent } from './home/home.component';
+import { TopBannerComponent } from './top-banner/top-banner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RsvpComponent,
-    ConfirmedComponent
+    ConfirmedComponent,
+    HomeComponent,
+    TopBannerComponent
   ],
   imports: [
     BrowserModule,
