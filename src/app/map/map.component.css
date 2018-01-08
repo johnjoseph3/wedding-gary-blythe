@@ -1,0 +1,9 @@
+.map-container {
+  position: relative;
+  height: 350px;
+  margin-top: 217px;
+}
+
+agm-map {
+  height: 300px;
+}
