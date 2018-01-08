@@ -1,0 +1,20 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Confirmed</th>
+      <th scope="col">Number of seats allowed</th>
+      <th scope="col">Number of seats confirmed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let guest of guests">
+      <td>{{guest.name}}</td>
+      <td>{{guest.confirmed}}</td>
+      <td>{{guest.number_of_seats_allowed}}</td>
+      <td>{{guest.number_of_seats_confirmed}}</td>
+    </tr>
+  </tbody>
+</table>
+

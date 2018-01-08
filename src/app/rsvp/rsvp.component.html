@@ -1,0 +1,30 @@
+<ng-select [allowClear]="true"
+    [items]="formattedGuests"
+    (data)="refreshValue($event)"
+    (selected)="selected($event)"
+    (removed)="removed($event)"
+    (typed)="typed($event)"
+    placeholder="Search yourself...">
+</ng-select>
+
+<div *ngIf="guest">
+  <div *ngIf="numberOfSeatsAllowedArray.length && !guest.confirmed">
+    <div>Number of seats:</div>
+    <div *ngFor="let number of numberOfSeatsAllowedArray; let i = index">
+      <input
+        type="radio"
+        [value]="i + 1"
+        [id]="i"
+        name="confirmedNumber"
+        [(ngModel)]="guest.number_of_seats_confirmed"
+        required
+        >
+        <label [for]="i">{{i + 1}}</label>
+    </div>
+  </div>
+  <button *ngIf="!guest.confirmed" (click)="rsvp()">RSVP</button>
+  <div *ngIf="guest.confirmed">You have RSVP'd.</div>
+</div>
+
+
+<div *ngIf="isProcessing">Processing...</div>
