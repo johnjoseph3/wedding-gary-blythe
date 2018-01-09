@@ -17,8 +17,6 @@ export class RsvpComponent implements OnInit {
   isProcessing: boolean = false;
   error: boolean = false;
   private value:any = {};
-  private _disabledV:string = '0';
-  private disabled:boolean = false;
 
   ngOnInit() {
     this.guestsService.getGuests();
@@ -49,21 +47,9 @@ export class RsvpComponent implements OnInit {
     }
   }
 
-  private get disabledV():string {
-    return this._disabledV;
-  }
- 
-  private set disabledV(value:string) {
-    this._disabledV = value;
-    this.disabled = this._disabledV === '1';
-  }
- 
   public removed(value:any):void {
-    console.log('Removed value is: ', value);
-  }
- 
-  public typed(value:any):void {
-    // console.log('New search input: ', value);
+    this.guest = null;
+    this.selectedPlusNumber = null;
   }
  
   public refreshValue(value:any):void {

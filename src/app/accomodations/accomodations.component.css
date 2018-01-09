@@ -8,3 +8,136 @@
   font-weight: bold;
   padding: 40px 0;
 }
+
+.hotels-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px 100px 80px;
+  text-align: left;
+}
+
+.hotel-container {
+  width: 48%;
+}
+
+.hotel {
+  height: 375px;
+}
+
+.hotel-details {
+  padding-left: 80px;
+}
+
+.hampton {
+  background-image: url(/assets/hampton-inn.png);
+  background-size: cover;
+  position: relative;
+  padding-left: 80px;
+}
+
+.hampton-overlay {
+  position: absolute;
+  bottom: 0;
+}
+
+.hampton-header {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #FFAAAA;
+}
+
+.other {
+  text-align: right;
+  padding-right: 80px;
+}
+
+.other-header {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hampton-sub-header {
+  font-size: 26px;
+  color: white;
+}
+
+.description {
+  width: 80%;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.book-button {
+  background: #213E5E;
+  color: white;
+  border: 0;
+  outline: 0;
+  width: 200px;
+  padding: 10px 0;
+}
+
+.hotel-links {
+  float: right;
+}
+
+.hotel-link {
+  background: #ABCDD8;
+  width: 300px;
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hotel-link:hover {
+  cursor: pointer;
+}
+
+i {
+  border: solid #213E5E;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+@media (max-width: 1000px) {
+  .hotels-container {
+    padding: 0 20px 100px 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hotels-container {
+    display: block;
+  }
+  .hotel-container {
+    width: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .hotel {
+    padding-left: 20px;
+  }
+  .hotel-details {
+    padding-left: 20px;
+  }
+  .description {
+    width: 90%;
+  }
+  .other {
+    padding-right: 0;
+    text-align: left;
+  }
+  .hotel-links {
+    float: left;
+  }
+}
