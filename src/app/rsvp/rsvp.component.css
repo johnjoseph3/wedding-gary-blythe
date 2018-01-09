@@ -1,3 +1,60 @@
 .error-text {
   color: red;
 }
+
+.bg {
+  background-image: url(/assets/faces-pattern.png);
+  height: 100%;
+  margin-top: -40px;
+  position: relative;
+}
+
+.card {
+  width: 70%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: white;
+  box-shadow: 10px 10px 5px rgb(170, 168, 168);
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.header {
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  margin: 40px 0 20px 0;
+}
+
+.sub-header {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.radio-buttons {
+  margin-bottom: 20px;
+}
+
+.radio-button {
+  margin-right: 20px;
+}
+
+.processing {
+  font-size: 26px;
+  color: black;
+}
+
+.error-text {
+  margin-top: 20px;
+  color: red;
+}
+
+@media (max-width: 800px) {
+  .card {
+    padding: 80px 20px;
+    width: 90%;
+  }
+}

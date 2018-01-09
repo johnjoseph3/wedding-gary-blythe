@@ -1,9 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import 'styles/ng2-select.css';
+@import 'styles/radio.css';
 
+html {
+  height: 100%;
+}
 
 body {
   font-family: 'Saira', sans-serif;
   color: #213E5E;
+  height: 100%;
+}
+
+.blue-button {
+  background: #213E5E;
+  color: white;
+  border: 0;
+  outline: 0;
+  width: 200px;
+  padding: 10px 0;
 }

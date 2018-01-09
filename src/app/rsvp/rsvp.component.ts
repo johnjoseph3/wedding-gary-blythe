@@ -17,6 +17,8 @@ export class RsvpComponent implements OnInit {
   isProcessing: boolean = false;
   error: boolean = false;
   private value:any = {};
+  submitted: boolean = false;
+  isNumberOfSeatsSelected: boolean = false;
 
   ngOnInit() {
     this.guestsService.getGuests();
@@ -25,26 +27,39 @@ export class RsvpComponent implements OnInit {
   }
 
   public rsvp() {
-    this.isProcessing = true;
-    this.guest.confirmed = true;
-    this.guestsService.updateGuest(this.guest)
-      .subscribe(data => {
-        this.isProcessing = false;
-      }, error => {
-        this.isProcessing = false;
-      });
+    this.submitted = true;
+    if(this.isNumberOfSeatsSelected || this.guest.number_of_seats_allowed < 2) {
+      this.isProcessing = true;
+      this.guest.confirmed = true;
+      if (this.guest.number_of_seats_allowed === 1) {
+        this.guest.number_of_seats_confirmed = 1;
+      }
+      this.guestsService.updateGuest(this.guest)
+        .subscribe(data => {
+          this.isNumberOfSeatsSelected = false;
+          this.submitted = false;
+          this.isProcessing = false;
+        }, error => {
+          this.isNumberOfSeatsSelected = false;
+          this.submitted = false;
+          this.isProcessing = false;
+        });
+    }
   }
 
   public selected(value:any):void {
     this.guest = this.guests.filter(guest => guest._id === value.id)[0];
     const numberOfSeatsAllowed = this.guest.number_of_seats_allowed;
-    this.guest.number_of_seats_confirmed = 1;
     this.selectedPlusNumber = null;
     if(numberOfSeatsAllowed > 1) {
       this.numberOfSeatsAllowedArray = new Array(numberOfSeatsAllowed);
     } else {
       this.numberOfSeatsAllowedArray = [];
     }
+  }
+
+  numberSelected() {
+    this. isNumberOfSeatsSelected = true;
   }
 
   public removed(value:any):void {
