@@ -1,19 +1,21 @@
 .banner {
   background-image: url(/assets/banner-image.png);
   background-position: center; 
-  height: 890px;
-  padding-top: 525px;
+  height: 800px;
+  position: relative;
 }
 
 .rsvp-container {
   width: 70%;
-  height: 400px;
-  top: 535px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   margin: auto;
   background: white;
-  padding-top: 100px;
+  padding: 50px 0;
   text-align: center;
-  margin-bottom: 80px;
 }
 
 .rsvp-details {
@@ -25,7 +27,7 @@
 .header {
   font-family: 'Saira Condensed', sans-serif;
   font-size: 32px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .sub-header {
@@ -46,19 +48,11 @@
   background: #FFAAAA;
   border: 0;
   padding: 20px 0;
-  margin-top: 60px; 
+  margin-top: 50px; 
   font-weight: bold;
   font-size: 32px;
   border-radius: 8px;
   box-shadow: 10px 10px 5px rgb(170, 168, 168);
-}
-
-.info-bar {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  background: #ABCDD8;
-  padding: 40px 0;
 }
 
 @media (max-width: 800px) {

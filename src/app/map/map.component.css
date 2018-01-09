@@ -1,9 +1,16 @@
 .map-container {
   position: relative;
   height: 350px;
-  margin-top: 217px;
 }
 
 agm-map {
   height: 350px;
+}
+
+.header {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ABCDD8;
+  padding: 40px 0;
 }
