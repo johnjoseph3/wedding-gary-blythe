@@ -50,13 +50,14 @@ export class RsvpComponent implements OnInit {
 
   public selected(value:any):void {
     this.guest = this.guests.filter(guest => guest._id === value.id)[0];
+    this.submitted = false;
     const numberOfSeatsAllowed = this.guest.number_of_seats_allowed;
     this.selectedPlusNumber = null;
     this.numberOfSeatsAllowedArray = new Array(numberOfSeatsAllowed);
   }
 
   numberSelected() {
-    this. isNumberOfSeatsSelected = true;
+    this.isNumberOfSeatsSelected = true;
   }
 
   public removed(value:any):void {
