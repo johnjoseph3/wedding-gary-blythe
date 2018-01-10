@@ -11,6 +11,14 @@ if (isDeveloping) {
 	console.log("In development mode");
 }
 app.use(bodyParser.json())
+
+app.use(function (req, res, next) {
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+  next()
+});
+
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.listen(port, '0.0.0.0', (err) => {
