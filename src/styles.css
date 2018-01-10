@@ -21,3 +21,13 @@ body {
   width: 200px;
   padding: 10px 0;
 }
+
+.light-blue-button {
+  background: #ABCDD8;
+  color: white;
+  border: 0;
+  outline: 0;
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 0;
+}

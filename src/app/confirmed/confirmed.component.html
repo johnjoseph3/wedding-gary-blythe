@@ -2,18 +2,19 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Confirmed</th>
-      <th scope="col">Number of seats allowed</th>
-      <th scope="col">Number of seats confirmed</th>
+      <th scope="col"></th>
+      <th scope="col">Seats allowed</th>
+      <th scope="col">Seats confirmed</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let guest of guests">
-      <td>{{guest.name}}</td>
-      <td>{{guest.confirmed}}</td>
+      <td [ngClass]="{'confirmed': guest.confirmed, 'declined': guest.declined}">{{guest.name}}</td>
       <td>{{guest.number_of_seats_allowed}}</td>
-      <td>{{guest.number_of_seats_confirmed}}</td>
+      <td>
+        <span *ngIf="guest.number_of_seats_confirmed">{{guest.number_of_seats_confirmed}}</span>
+        <span *ngIf="!guest.number_of_seats_confirmed">N/A</span>
+      </td>
     </tr>
   </tbody>
 </table>

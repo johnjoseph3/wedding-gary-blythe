@@ -1,0 +1,11 @@
+.confirmed {
+  color: green;
+}
+
+.declined {
+  color: red;
+}
+
+.seats {
+  margin-left: 10px;
+}
