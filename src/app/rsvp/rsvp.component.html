@@ -1,5 +1,7 @@
 <div class="bg">
   <div class="card">
+    <a *ngIf="!guest || (!guest.confirmed && !guest.declined)" class="back" routerLink="/">Back</a>
+
     <ng-select [allowClear]="true"
         [items]="formattedGuests"
         (data)="refreshValue($event)"
@@ -9,29 +11,50 @@
     </ng-select>
 
     <div *ngIf="guest">
-      <div *ngIf="!guest.confirmed">
-        <div class="header">We have reserved {{guest.number_of_seats_allowed}} {{guest.number_of_seats_allowed > 1 ? 'seats' : 'seat'}} for you</div>
-        <div *ngIf="guest.number_of_seats_allowed > 1" class="sub-header">How many people will attend?</div>
+      <div *ngIf="!guest.confirmed && !guest.declined">
+        <div class="header">{{guest.name}}</div>
+        <div class="header">We have reserved {{guest.number_of_seats_allowed}} {{guest.number_of_seats_allowed > 1 ? 'seats' : 'seat'}} for you.</div>
+        <div class="sub-header">How many people will attend?</div>
       </div>
-      <div class="radio-buttons" *ngIf="guest.number_of_seats_allowed > 1 && !guest.confirmed">
-        <span class="radio-button" *ngFor="let number of numberOfSeatsAllowedArray; let i = index">
+      <div class="radio-buttons" *ngIf="!guest.confirmed && !guest.declined">
+        <span class="radio-button zero-button">
           <input
             type="radio"
-            [value]="i + 1"
-            [id]="i"
+            [value]="0"
+            [id]="0"
             name="confirmedNumber"
             [(ngModel)]="guest.number_of_seats_confirmed"
             required
             (click)="numberSelected()"
             >
-            <label [for]="i">{{i + 1}}</label>
+            <label [for]="0">0</label>
+        </span>
+        <span class="radio-button" *ngFor="let number of numberOfSeatsAllowedArray; let i = index">
+          <input
+            type="radio"
+            [value]="i + 1"
+            [id]="i + 1"
+            name="confirmedNumber"
+            [(ngModel)]="guest.number_of_seats_confirmed"
+            required
+            (click)="numberSelected()"
+            >
+            <label [for]="i + 1">{{i + 1}}</label>
         </span>
       </div>
-      <button class="blue-button" *ngIf="!guest.confirmed" (click)="rsvp()">RSVP</button>
-      <div class="error-text" *ngIf="!isNumberOfSeatsSelected && submitted && guest.number_of_seats_allowed > 1">Please select a number of guests</div>
-      <div class="header" *ngIf="guest.confirmed">You have RSVP'd for {{guest.number_of_seats_confirmed}} {{guest.number_of_seats_confirmed > 1 ? 'seats' : 'seat'}}</div>
-    </div>
+      <button class="blue-button" *ngIf="!guest.confirmed && !guest.declined" (click)="rsvp()">Confirm RSVP</button>
+      <div class="error-text" *ngIf="!isNumberOfSeatsSelected && submitted">Please select a number of guests</div>
 
+      <div *ngIf="guest.confirmed">
+        <div class="header">Hooray!</div>
+        <div class="header">We have confirmed {{guest.number_of_seats_confirmed}} {{guest.number_of_seats_confirmed > 1 ? 'seats' : 'seat'}} for you.</div>
+        <div class="sub-header">Thank you so much for your RSVP.</div>
+        <div class="sub-header">If you have any questions, please contact Blythe or Gary.</div>
+      </div>
+
+      <div class="header" *ngIf="guest.declined">We're sorry you won't be joinging us.</div>
+      <a *ngIf="guest.confirmed || guest.declined" class="btn light-blue-button return" routerLink="/">Return to site</a>
+    </div>
 
     <div class="processing" *ngIf="isProcessing">Processing...</div>
   </div>
