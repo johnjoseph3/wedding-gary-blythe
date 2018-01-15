@@ -1,12 +1,12 @@
 .banner {
-  background-image: url(/assets/banner-image.png);
-  background-position: center; 
+  background-image: url(/assets/faces-pattern.png);
+  background-position: center;
   height: 800px;
   position: relative;
 }
 
 .rsvp-container {
-  width: 70%;
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -15,6 +15,14 @@
   margin: auto;
   background: white;
   padding: 50px 0;
+  text-align: center;
+}
+
+.header-title {
+  background-image: url(/assets/big-faces.png);
+  max-height: 500px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   text-align: center;
 }
 
@@ -48,7 +56,7 @@
   background: #FFAAAA;
   border: 0;
   padding: 20px 0;
-  margin-top: 50px; 
+  margin-top: 50px;
   font-weight: bold;
   font-size: 32px;
   border-radius: 8px;
