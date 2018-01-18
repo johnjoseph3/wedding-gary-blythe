@@ -1,20 +1,30 @@
 .map-wrapper {
   margin-top: 100px;
+  position: relative;
+  display: block;
 }
 
 .map-container {
   position: relative;
-  height: 350px;
+  z-index: -1;
+  height: 430px;
+  top: -80px;
 }
 
 agm-map {
-  height: 350px;
+  height: 430px;
+  z-index: -1;
 }
 
 .header {
+  display: block;
   text-align: center;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   background: #ABCDD8;
-  padding: 40px 0;
+  padding: 80px 0;
+  margin: auto;
+  bottom: 0;
+  max-width: 960px;
+  z-index: 10;
 }
