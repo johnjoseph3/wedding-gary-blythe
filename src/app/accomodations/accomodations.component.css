@@ -1,23 +1,46 @@
 .accomodations-container {
   text-align: center;
-  background: #FFF6D6;
+  padding-top: 80px;
 }
 
 .header {
-  font-size: 16px;
+  display: block;
+  text-align: center;
+  font-size: 24px;
   font-weight: bold;
-  padding: 40px 0;
+  background: #ABCDD8;
+  padding: 80px 0;
+  margin: auto;
+  bottom: 0;
+  width: 80%;
+  max-width: 960px;
+  z-index: 10;
 }
 
 .hotels-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 80px 100px 80px;
+  /*display: flex;
+  justify-content: space-between;*/
   text-align: left;
+  background-color: #f7f7f7;
+  position: relative;
+  z-index: -1;
+  top: -80px;
+  padding-bottom: 80px;
+}
+
+.dual-column-container {
+  display: flex;
+  /*justify-content: space-between;*/
+  /*padding: 0 80px 100px 80px;*/
+  width: 80%;
+  max-width: 960px;
+  /*text-align: left;*/
+  padding-top: 160px;
+  margin: auto;
 }
 
 .hotel-container {
-  width: 48%;
+  width: 50%;
 }
 
 .hotel {
@@ -25,14 +48,14 @@
 }
 
 .hotel-details {
-  padding-left: 80px;
+  padding-left: 40px;
 }
 
 .hampton {
   background-image: url(/assets/hampton-inn.png);
   background-size: cover;
   position: relative;
-  padding-left: 80px;
+  padding-left: 40px;
 }
 
 .hampton-overlay {
@@ -49,7 +72,7 @@
 
 .other {
   text-align: right;
-  padding-right: 80px;
+  /*padding-right: 80px;*/
 }
 
 .other-header {
