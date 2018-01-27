@@ -1,0 +1,51 @@
+.registry-container {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.header {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background: #ABCDD8;
+  padding: 80px 0;
+  margin: auto;
+  bottom: 0;
+  width: 80%;
+  max-width: 960px;
+  z-index: 10;
+}
+
+.registry-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.store-tile {
+  flex-grow: 1;
+  width: 30%;
+  max-width: 500px;
+  min-height: 200px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0px 6px 12px rgba(56,51,51, 0.25);
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.crate-and-barrel {
+  background-image: url(/assets/crate-barrel.png);
+}
+
+.amazon {
+  background-image: url(/assets/amazon.png);
+}
+
+.bed-bath {
+  background-image: url(/assets/bed-bath.png);
+}
