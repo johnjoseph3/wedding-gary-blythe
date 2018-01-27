@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { TopBannerComponent } from './top-banner/top-banner.component';
 import { MapComponent } from './map/map.component';
 import { AccomodationsComponent } from './accomodations/accomodations.component';
+import { RegistryLinksComponent } from './registry-links/registry-links.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AccomodationsComponent } from './accomodations/accomodations.component'
     HomeComponent,
     TopBannerComponent,
     MapComponent,
-    AccomodationsComponent
+    AccomodationsComponent,
+    RegistryLinksComponent
   ],
   imports: [
     BrowserModule,
