@@ -1,6 +1,6 @@
 .registry-container {
   text-align: center;
-  padding-top: 80px;
+  /* padding-top: 80px; */
 }
 
 .header {
@@ -22,6 +22,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 80px 0;
 }
 
 .store-tile {
@@ -37,6 +38,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  border: none;
 }
 
 .crate-and-barrel {
